@@ -13,15 +13,12 @@ Este repositorio contiene el frontend de nuestra plataforma iot, diseñada con v
 
 - Si eres usuario windows primero debes instalar WSL en la PC, la cual va a instalar una distribucion de Ubuntu dentro de windows10 es como si tuvieramos otra PC con UBUNTU dentro de windows10.
 - Despues instalar docker desktop en tu PC.
-- En la terminal entrar a ubuntu luego /home/jpatino y ahi crear una carpeta llamada **wie-plataforma-iot** y alli debes ***clonar***  las dos carpetas del proyecto 
-  ```
-     git clone https://github.com/Dignal-Electronics/iot-backend-2024.git
-  ```
+- En la terminal entrar a ubuntu luego /home/jpatino y ahi crear una carpeta llamada **wie-plataforma-iot** y alli debes ***clonar***  la carpeta del proyecto 
+  
   ```
 	 git clone https://github.com/Dignal-Electronics/iot-front-2024.git
   ```
 - Cambiamos el nombre de las carpetas:
-	- iot-backend-2024 por  **wie-backend-2024**
 	- iot-front-2024   por  **wie-frontend-2024**
 
 - En la terminal de visual code iniciamos el repositorio con el comando
@@ -40,6 +37,9 @@ Este repositorio contiene el frontend de nuestra plataforma iot, diseñada con v
 ## LEVANTAR EL PROYECTO CON DOCKER
 
 - El proyecto debe ser levantado usando docker, para ello primero debemos de instalar las dependencias usando el comando `npm install`:
+  pero antes se debe crear en el proyecto el archivo **.env** para las variables de entorno, en realidad las variables no se deben subir al repositorio
+  por medidads de seguridad, en su lugar se sube el archivo .env.example, luego ejecutar el comando **npm install** para instalar las dependencias pero desde docker
+  con el siguiente comando. 
 
 ```
 docker compose -f .docker/compose.yaml run node npm install
